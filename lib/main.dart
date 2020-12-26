@@ -24,6 +24,7 @@ class DiagnocareSolutionsApp extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return GetBuilder(
+
       builder: (_) {
         return LayoutBuilder(
           builder: (context, constraints) {

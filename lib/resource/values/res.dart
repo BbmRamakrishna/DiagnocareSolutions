@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
 class Res {
-  static const String slider_second_image = "assets/images/slider_second_image.png";
+  static const String l37BankLogo = "assets/images/l37BankLogo.png";
+
 
   /******************************  Font Icons  ***********/
   static const _kFontFam = 'DiagnocareSolutionsIcons';

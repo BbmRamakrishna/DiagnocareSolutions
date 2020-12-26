@@ -1,3 +1,18 @@
+class Response {
+  final List<DiagnocareSolutionsResponse> list;
+
+  Response({
+    this.list,
+  });
+
+  factory Response.fromJson(List<dynamic> parsedJson) {
+    List<DiagnocareSolutionsResponse> list = new List<DiagnocareSolutionsResponse>();
+    list = parsedJson.map((i) => DiagnocareSolutionsResponse.fromJson(i)).toList();
+
+    return new Response(list: list);
+  }
+}
+
 class DiagnocareSolutionsResponse {
   String login;
   int id;
@@ -14,17 +29,17 @@ class DiagnocareSolutionsResponse {
 
   DiagnocareSolutionsResponse(
       {this.login,
-        this.id,
-        this.nodeId,
-        this.url,
-        this.reposUrl,
-        this.eventsUrl,
-        this.hooksUrl,
-        this.issuesUrl,
-        this.membersUrl,
-        this.publicMembersUrl,
-        this.avatarUrl,
-        this.description});
+      this.id,
+      this.nodeId,
+      this.url,
+      this.reposUrl,
+      this.eventsUrl,
+      this.hooksUrl,
+      this.issuesUrl,
+      this.membersUrl,
+      this.publicMembersUrl,
+      this.avatarUrl,
+      this.description});
 
   DiagnocareSolutionsResponse.fromJson(Map<String, dynamic> json) {
     login = json['login'];
