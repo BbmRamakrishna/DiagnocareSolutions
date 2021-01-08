@@ -1,15 +1,15 @@
-class Response {
+class DummyResponse {
   final List<DiagnocareSolutionsResponse> list;
 
-  Response({
+  DummyResponse({
     this.list,
   });
 
-  factory Response.fromJson(List<dynamic> parsedJson) {
+  factory DummyResponse.fromJson(List<dynamic> parsedJson) {
     List<DiagnocareSolutionsResponse> list = new List<DiagnocareSolutionsResponse>();
     list = parsedJson.map((i) => DiagnocareSolutionsResponse.fromJson(i)).toList();
 
-    return new Response(list: list);
+    return new DummyResponse(list: list);
   }
 }
 

@@ -1,17 +1,17 @@
 
-import 'package:getx/network/response/diagnocare_solutions_response.dart';
+import 'package:getx/network/response/dummy_response.dart';
 import 'package:get/get.dart';
 
 class FirstScreenController extends GetxController {
   List<dynamic> diagnocareSolutionsResponse = [];
-  Response listResponse;
+  DummyResponse listResponse;
   var showTwoListButtonSelected = false;
   var showThreeListButtonSelected = false;
   var showListButtonSelected = false;
 
   void setDiagnocareResponse(List<dynamic> response) {
     diagnocareSolutionsResponse = response;
-    listResponse = Response.fromJson(diagnocareSolutionsResponse);
+    listResponse = DummyResponse.fromJson(diagnocareSolutionsResponse);
     update();
     checkFormValid();
   }
