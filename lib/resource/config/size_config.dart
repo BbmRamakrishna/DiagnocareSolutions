@@ -1,4 +1,4 @@
-import 'package:diagnocare_solutions/resource/constants/app_constants.dart';
+import 'package:getx/resource/constants/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

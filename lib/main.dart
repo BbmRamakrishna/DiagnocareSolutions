@@ -1,6 +1,6 @@
-import 'package:diagnocare_solutions/resource/config/size_config.dart';
-import 'package:diagnocare_solutions/resource/values/app_styles.dart';
-import 'package:diagnocare_solutions/utils/route_generator.dart';
+import 'package:getx/resource/values/app_styles.dart';
+import 'package:getx/resource/config/size_config.dart';
+import 'package:getx/utils/route_generator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -13,10 +13,10 @@ void main() async {
     ),
   );
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(DiagnocareSolutionsApp());
+  runApp(GetxApp());
 }
 
-class DiagnocareSolutionsApp extends StatelessWidget {
+class GetxApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([

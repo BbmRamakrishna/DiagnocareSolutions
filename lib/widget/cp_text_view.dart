@@ -1,6 +1,6 @@
-import 'package:diagnocare_solutions/resource/constants/app_constants.dart';
-import 'package:diagnocare_solutions/resource/values/app_dimens.dart';
-import 'package:diagnocare_solutions/utils/screen_utils.dart';
+import 'package:getx/resource/constants/app_constants.dart';
+import 'package:getx/resource/values/app_dimens.dart';
+import 'package:getx/utils/screen_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

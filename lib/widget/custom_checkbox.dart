@@ -1,4 +1,4 @@
-import 'package:diagnocare_solutions/resource/values/app_dimens.dart';
+import 'package:getx/resource/values/app_dimens.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';

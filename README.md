@@ -1,4 +1,4 @@
-# diagnocare_solutions
+# getx
 
 A new Flutter application.
 

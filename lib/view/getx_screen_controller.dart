@@ -1,10 +1,8 @@
-import 'dart:convert';
 
-import 'package:diagnocare_solutions/network/response/diagnocare_solutions_response.dart';
-import 'package:diagnocare_solutions/resource/values/res.dart';
+import 'package:getx/network/response/diagnocare_solutions_response.dart';
 import 'package:get/get.dart';
 
-class DiagnocareTaskController extends GetxController {
+class GetxScreenController extends GetxController {
   List<dynamic> diagnocareSolutionsResponse = [];
   Response listResponse;
   var showTwoListButtonSelected = false;

@@ -1,4 +1,4 @@
-import 'package:diagnocare_solutions/resource/values/app_colors.dart';
+import 'package:getx/resource/values/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 
 class AppConfigurations {

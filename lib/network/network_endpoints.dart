@@ -4,6 +4,6 @@ class NetworkEndpoints {
 
 //*************************************************************************************************************
 
-  final String DIAGNOCARE_SOLUTIONS_API = _BASE_URL + "hadley/orgs";
+  final String getx_API = _BASE_URL + "hadley/orgs";
 
 }

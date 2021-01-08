@@ -1,4 +1,4 @@
-import 'package:diagnocare_solutions/resource/config/size_config.dart';
+import 'package:getx/resource/config/size_config.dart';
 import 'package:flutter/cupertino.dart';
 Widget sizedBoxHeight(int i) {
   return SizedBox(

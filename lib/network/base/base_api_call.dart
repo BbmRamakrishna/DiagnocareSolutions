@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:diagnocare_solutions/network/utils/NetworkUtils.dart';
-import 'package:diagnocare_solutions/utils/api_loader.dart';
+import 'package:getx/network/utils/NetworkUtils.dart';
+import 'package:getx/utils/api_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;

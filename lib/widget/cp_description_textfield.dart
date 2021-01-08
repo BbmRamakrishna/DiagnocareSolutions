@@ -1,6 +1,6 @@
-import 'package:diagnocare_solutions/resource/config/size_config.dart';
-import 'package:diagnocare_solutions/resource/constants/app_constants.dart';
-import 'package:diagnocare_solutions/resource/values/app_colors.dart';
+import 'package:getx/resource/config/size_config.dart';
+import 'package:getx/resource/constants/app_constants.dart';
+import 'package:getx/resource/values/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CPDescriptionTextField extends StatefulWidget {

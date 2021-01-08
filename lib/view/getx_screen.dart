@@ -1,35 +1,35 @@
-import 'package:diagnocare_solutions/resource/constants/app_constants.dart';
-import 'package:diagnocare_solutions/resource/values/app_colors.dart';
-import 'package:diagnocare_solutions/resource/values/app_dimens.dart';
-import 'package:diagnocare_solutions/resource/values/app_strings.dart';
-import 'package:diagnocare_solutions/utils/utility_widgets.dart';
-import 'package:diagnocare_solutions/view/diagnocare_task_controller.dart';
-import 'package:diagnocare_solutions/view/diagnocare_task_viewmodel.dart';
-import 'package:diagnocare_solutions/widget/cp_appbar.dart';
-import 'package:diagnocare_solutions/widget/cp_button.dart';
-import 'package:diagnocare_solutions/widget/cp_text_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx/resource/constants/app_constants.dart';
+import 'package:getx/resource/values/app_colors.dart';
+import 'package:getx/resource/values/app_dimens.dart';
+import 'package:getx/resource/values/app_strings.dart';
+import 'package:getx/utils/utility_widgets.dart';
+import 'package:getx/view/getx_screen_controller.dart';
+import 'package:getx/view/getx_screen_viewmodel.dart';
+import 'package:getx/widget/cp_appbar.dart';
+import 'package:getx/widget/cp_button.dart';
+import 'package:getx/widget/cp_text_view.dart';
 
-class DiagnocareTaskScreen extends StatefulWidget {
+class GetxScreen extends StatefulWidget {
   @override
-  DiagnocareTaskScreenState createState() => DiagnocareTaskScreenState();
+  GetxScreenState createState() => GetxScreenState();
 }
 
-class DiagnocareTaskScreenState extends State<DiagnocareTaskScreen> {
-  DiagnocareTaskViewModel diagnocareTaskViewModel;
-  DiagnocareTaskController diagnocareTaskController;
+class GetxScreenState extends State<GetxScreen> {
+  GetxScreenViewModel getxScreenViewModel;
+  GetxScreenController getxScreenController;
 
   @override
   void initState() {
-    Get.put(DiagnocareTaskController());
-    diagnocareTaskController = Get.find<DiagnocareTaskController>();
-    diagnocareTaskViewModel = DiagnocareTaskViewModel(diagnocareTaskController);
+    Get.put(GetxScreenController());
+    getxScreenController = Get.find<GetxScreenController>();
+    getxScreenViewModel = GetxScreenViewModel(getxScreenController);
     super.initState();
   }
 
   Future<void> callApis() async {
-    await diagnocareTaskViewModel.apiCallForDiagnocareResponse();
+    await getxScreenViewModel.apiCallForDiagnocareResponse();
   }
 
   @override
@@ -44,7 +44,7 @@ class DiagnocareTaskScreenState extends State<DiagnocareTaskScreen> {
       ),
       backgroundColor: AppColors.WHITE_COLOR,
       body: GetBuilder(
-        init: diagnocareTaskController,
+        init: getxScreenController,
         builder: (_) {
           return SafeArea(
             child: Container(
@@ -61,48 +61,22 @@ class DiagnocareTaskScreenState extends State<DiagnocareTaskScreen> {
                         child: CPButton(
                           btnWidth: AppDimens.NUM_94.toDouble(),
                           btnHeight: AppDimens.NUM_40.toDouble(),
-                          textColor: (diagnocareTaskController
-                                  .showTwoListButtonSelected)
-                              ? AppColors.WHITE_COLOR
-                              : AppColors.BLACK,
+                          textColor:
+                              (getxScreenController.showTwoListButtonSelected)
+                                  ? AppColors.WHITE_COLOR
+                                  : AppColors.BLACK,
                           marginBottom: AppDimens.NUM_35.toDouble(),
-                          btnBackgroundColor: (diagnocareTaskController
-                                  .showTwoListButtonSelected)
-                              ? AppColors.activeLight
-                              : AppColors.accent,
+                          btnBackgroundColor:
+                              (getxScreenController.showTwoListButtonSelected)
+                                  ? AppColors.activeLight
+                                  : AppColors.accent,
                           btnText: AppStrings.ShowTwoItems,
                           textSize: AppDimens.NUM_14,
                           borderColor: AppColors.LIGHT_GRAY,
                           fontWeight: CPFont.w500,
                           onPressed: () {
                             callApis();
-                            diagnocareTaskController.setTwoListButtonClick();
-                          },
-                        ),
-                      ),
-                      Expanded(flex: 5, child: sizedBoxWidth(AppDimens.NUM_3)),
-                      Expanded(
-                        flex: 30,
-                        child: CPButton(
-                          btnWidth: AppDimens.NUM_94.toDouble(),
-                          btnHeight: AppDimens.NUM_40.toDouble(),
-                          textColor: (diagnocareTaskController
-                                  .showThreeListButtonSelected)
-                              ? AppColors.WHITE_COLOR
-                              : AppColors.BLACK,
-                          marginBottom: AppDimens.NUM_35.toDouble(),
-                          btnBackgroundColor: (diagnocareTaskController
-                                  .showThreeListButtonSelected)
-                              ? AppColors.activeLight
-                              : AppColors.accent,
-                          btnText: AppStrings.ShowThreeItems,
-                          borderColor: AppColors.LIGHT_GRAY,
-                          fontStyle: AppConfigurations.FONT_STYLE_NORMAL,
-                          textSize: AppDimens.NUM_14,
-                          fontWeight: CPFont.w500,
-                          onPressed: () {
-                            callApis();
-                            diagnocareTaskController.setThreeListButtonClick();
+                            getxScreenController.setTwoListButtonClick();
                           },
                         ),
                       ),
@@ -113,12 +87,38 @@ class DiagnocareTaskScreenState extends State<DiagnocareTaskScreen> {
                           btnWidth: AppDimens.NUM_94.toDouble(),
                           btnHeight: AppDimens.NUM_40.toDouble(),
                           textColor:
-                              (diagnocareTaskController.showListButtonSelected)
+                              (getxScreenController.showThreeListButtonSelected)
                                   ? AppColors.WHITE_COLOR
                                   : AppColors.BLACK,
                           marginBottom: AppDimens.NUM_35.toDouble(),
                           btnBackgroundColor:
-                              (diagnocareTaskController.showListButtonSelected)
+                              (getxScreenController.showThreeListButtonSelected)
+                                  ? AppColors.activeLight
+                                  : AppColors.accent,
+                          btnText: AppStrings.ShowThreeItems,
+                          borderColor: AppColors.LIGHT_GRAY,
+                          fontStyle: AppConfigurations.FONT_STYLE_NORMAL,
+                          textSize: AppDimens.NUM_14,
+                          fontWeight: CPFont.w500,
+                          onPressed: () {
+                            callApis();
+                            getxScreenController.setThreeListButtonClick();
+                          },
+                        ),
+                      ),
+                      Expanded(flex: 5, child: sizedBoxWidth(AppDimens.NUM_3)),
+                      Expanded(
+                        flex: 30,
+                        child: CPButton(
+                          btnWidth: AppDimens.NUM_94.toDouble(),
+                          btnHeight: AppDimens.NUM_40.toDouble(),
+                          textColor:
+                              (getxScreenController.showListButtonSelected)
+                                  ? AppColors.WHITE_COLOR
+                                  : AppColors.BLACK,
+                          marginBottom: AppDimens.NUM_35.toDouble(),
+                          btnBackgroundColor:
+                              (getxScreenController.showListButtonSelected)
                                   ? AppColors.activeLight
                                   : AppColors.accent,
                           btnText: AppStrings.ShowList,
@@ -128,7 +128,7 @@ class DiagnocareTaskScreenState extends State<DiagnocareTaskScreen> {
                           fontWeight: CPFont.w500,
                           onPressed: () {
                             callApis();
-                            diagnocareTaskController.setListButtonClick();
+                            getxScreenController.setListButtonClick();
                           },
                         ),
                       )
@@ -152,7 +152,7 @@ class DiagnocareTaskScreenState extends State<DiagnocareTaskScreen> {
                   ),
                 ),
                 sizedBoxHeight(AppDimens.NUM_3),
-                (diagnocareTaskController.diagnocareSolutionsResponse.length >
+                (getxScreenController.diagnocareSolutionsResponse.length >
                         AppDimens.NUM_0)
                     ? fetchListData()
                     : Container()
@@ -191,13 +191,13 @@ class DiagnocareTaskScreenState extends State<DiagnocareTaskScreen> {
   }
 
   int getItemCount() {
-    if (diagnocareTaskController.diagnocareSolutionsResponse.length > 0) {
-      if (diagnocareTaskController.showTwoListButtonSelected) {
+    if (getxScreenController.diagnocareSolutionsResponse.length > 0) {
+      if (getxScreenController.showTwoListButtonSelected) {
         return AppDimens.NUM_2;
-      } else if (diagnocareTaskController.showThreeListButtonSelected) {
+      } else if (getxScreenController.showThreeListButtonSelected) {
         return AppDimens.NUM_3;
       } else {
-        return diagnocareTaskController.diagnocareSolutionsResponse.length;
+        return getxScreenController.diagnocareSolutionsResponse.length;
       }
     } else {
       return 0;
@@ -219,11 +219,9 @@ class DiagnocareTaskScreenState extends State<DiagnocareTaskScreen> {
                   itemCount: getItemCount(),
                   itemBuilder: (BuildContext buildContext, int index) {
                     return _listTileForDiagnocare(
-                      diagnocareTaskController.listResponse.list[index].login ??
-                          "",
+                      getxScreenController.listResponse.list[index].login ?? "",
                       getDescription(index),
-                      diagnocareTaskController
-                              .listResponse.list[index].avatarUrl ??
+                      getxScreenController.listResponse.list[index].avatarUrl ??
                           "",
                     );
                   }),
@@ -235,14 +233,14 @@ class DiagnocareTaskScreenState extends State<DiagnocareTaskScreen> {
   }
 
   String getDescription(int index) {
-    if (diagnocareTaskController.listResponse.list[index].description == null) {
+    if (getxScreenController.listResponse.list[index].description == null) {
       return "Description Not Availble";
-    } else if (diagnocareTaskController
+    } else if (getxScreenController
             .listResponse.list[index].description.length ==
         AppDimens.NUM_0) {
       return "Description Not Availble";
     } else {
-      return diagnocareTaskController.listResponse.list[index].description;
+      return getxScreenController.listResponse.list[index].description;
     }
   }
 }

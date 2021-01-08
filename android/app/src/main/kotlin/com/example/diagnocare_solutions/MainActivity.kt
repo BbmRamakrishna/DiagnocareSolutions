@@ -1,4 +1,4 @@
-package com.example.diagnocare_solutions
+package com.example.getx
 
 import io.flutter.embedding.android.FlutterActivity
 
