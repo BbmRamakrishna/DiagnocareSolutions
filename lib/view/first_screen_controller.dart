@@ -2,7 +2,7 @@
 import 'package:getx/network/response/diagnocare_solutions_response.dart';
 import 'package:get/get.dart';
 
-class GetxScreenController extends GetxController {
+class FirstScreenController extends GetxController {
   List<dynamic> diagnocareSolutionsResponse = [];
   Response listResponse;
   var showTwoListButtonSelected = false;

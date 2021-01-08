@@ -5,31 +5,31 @@ import 'package:getx/resource/values/app_colors.dart';
 import 'package:getx/resource/values/app_dimens.dart';
 import 'package:getx/resource/values/app_strings.dart';
 import 'package:getx/utils/utility_widgets.dart';
-import 'package:getx/view/getx_screen_controller.dart';
-import 'package:getx/view/getx_screen_viewmodel.dart';
+import 'package:getx/view/first_screen_controller.dart';
+import 'package:getx/view/first_screen_viewmodel.dart';
 import 'package:getx/widget/cp_appbar.dart';
 import 'package:getx/widget/cp_button.dart';
 import 'package:getx/widget/cp_text_view.dart';
 
-class GetxScreen extends StatefulWidget {
+class FirstScreen extends StatefulWidget {
   @override
-  GetxScreenState createState() => GetxScreenState();
+  FirstScreenState createState() => FirstScreenState();
 }
 
-class GetxScreenState extends State<GetxScreen> {
-  GetxScreenViewModel getxScreenViewModel;
-  GetxScreenController getxScreenController;
+class FirstScreenState extends State<FirstScreen> {
+  FirstScreenViewModel firstScreenViewModel;
+  FirstScreenController firstScreenController;
 
   @override
   void initState() {
-    Get.put(GetxScreenController());
-    getxScreenController = Get.find<GetxScreenController>();
-    getxScreenViewModel = GetxScreenViewModel(getxScreenController);
+    Get.put(FirstScreenController());
+    firstScreenController = Get.find<FirstScreenController>();
+    firstScreenViewModel = FirstScreenViewModel(firstScreenController);
     super.initState();
   }
 
   Future<void> callApis() async {
-    await getxScreenViewModel.apiCallForDiagnocareResponse();
+    await firstScreenViewModel.apiCallForDiagnocareResponse();
   }
 
   @override
@@ -44,7 +44,7 @@ class GetxScreenState extends State<GetxScreen> {
       ),
       backgroundColor: AppColors.WHITE_COLOR,
       body: GetBuilder(
-        init: getxScreenController,
+        init: firstScreenController,
         builder: (_) {
           return SafeArea(
             child: Container(
@@ -62,12 +62,12 @@ class GetxScreenState extends State<GetxScreen> {
                           btnWidth: AppDimens.NUM_94.toDouble(),
                           btnHeight: AppDimens.NUM_40.toDouble(),
                           textColor:
-                              (getxScreenController.showTwoListButtonSelected)
+                              (firstScreenController.showTwoListButtonSelected)
                                   ? AppColors.WHITE_COLOR
                                   : AppColors.BLACK,
                           marginBottom: AppDimens.NUM_35.toDouble(),
                           btnBackgroundColor:
-                              (getxScreenController.showTwoListButtonSelected)
+                              (firstScreenController.showTwoListButtonSelected)
                                   ? AppColors.activeLight
                                   : AppColors.accent,
                           btnText: AppStrings.ShowTwoItems,
@@ -76,7 +76,7 @@ class GetxScreenState extends State<GetxScreen> {
                           fontWeight: CPFont.w500,
                           onPressed: () {
                             callApis();
-                            getxScreenController.setTwoListButtonClick();
+                            firstScreenController.setTwoListButtonClick();
                           },
                         ),
                       ),
@@ -87,12 +87,12 @@ class GetxScreenState extends State<GetxScreen> {
                           btnWidth: AppDimens.NUM_94.toDouble(),
                           btnHeight: AppDimens.NUM_40.toDouble(),
                           textColor:
-                              (getxScreenController.showThreeListButtonSelected)
+                              (firstScreenController.showThreeListButtonSelected)
                                   ? AppColors.WHITE_COLOR
                                   : AppColors.BLACK,
                           marginBottom: AppDimens.NUM_35.toDouble(),
                           btnBackgroundColor:
-                              (getxScreenController.showThreeListButtonSelected)
+                              (firstScreenController.showThreeListButtonSelected)
                                   ? AppColors.activeLight
                                   : AppColors.accent,
                           btnText: AppStrings.ShowThreeItems,
@@ -102,7 +102,7 @@ class GetxScreenState extends State<GetxScreen> {
                           fontWeight: CPFont.w500,
                           onPressed: () {
                             callApis();
-                            getxScreenController.setThreeListButtonClick();
+                            firstScreenController.setThreeListButtonClick();
                           },
                         ),
                       ),
@@ -113,12 +113,12 @@ class GetxScreenState extends State<GetxScreen> {
                           btnWidth: AppDimens.NUM_94.toDouble(),
                           btnHeight: AppDimens.NUM_40.toDouble(),
                           textColor:
-                              (getxScreenController.showListButtonSelected)
+                              (firstScreenController.showListButtonSelected)
                                   ? AppColors.WHITE_COLOR
                                   : AppColors.BLACK,
                           marginBottom: AppDimens.NUM_35.toDouble(),
                           btnBackgroundColor:
-                              (getxScreenController.showListButtonSelected)
+                              (firstScreenController.showListButtonSelected)
                                   ? AppColors.activeLight
                                   : AppColors.accent,
                           btnText: AppStrings.ShowList,
@@ -128,7 +128,7 @@ class GetxScreenState extends State<GetxScreen> {
                           fontWeight: CPFont.w500,
                           onPressed: () {
                             callApis();
-                            getxScreenController.setListButtonClick();
+                            firstScreenController.setListButtonClick();
                           },
                         ),
                       )
@@ -152,7 +152,7 @@ class GetxScreenState extends State<GetxScreen> {
                   ),
                 ),
                 sizedBoxHeight(AppDimens.NUM_3),
-                (getxScreenController.diagnocareSolutionsResponse.length >
+                (firstScreenController.diagnocareSolutionsResponse.length >
                         AppDimens.NUM_0)
                     ? fetchListData()
                     : Container()
@@ -191,13 +191,13 @@ class GetxScreenState extends State<GetxScreen> {
   }
 
   int getItemCount() {
-    if (getxScreenController.diagnocareSolutionsResponse.length > 0) {
-      if (getxScreenController.showTwoListButtonSelected) {
+    if (firstScreenController.diagnocareSolutionsResponse.length > 0) {
+      if (firstScreenController.showTwoListButtonSelected) {
         return AppDimens.NUM_2;
-      } else if (getxScreenController.showThreeListButtonSelected) {
+      } else if (firstScreenController.showThreeListButtonSelected) {
         return AppDimens.NUM_3;
       } else {
-        return getxScreenController.diagnocareSolutionsResponse.length;
+        return firstScreenController.diagnocareSolutionsResponse.length;
       }
     } else {
       return 0;
@@ -219,9 +219,9 @@ class GetxScreenState extends State<GetxScreen> {
                   itemCount: getItemCount(),
                   itemBuilder: (BuildContext buildContext, int index) {
                     return _listTileForDiagnocare(
-                      getxScreenController.listResponse.list[index].login ?? "",
+                      firstScreenController.listResponse.list[index].login ?? "",
                       getDescription(index),
-                      getxScreenController.listResponse.list[index].avatarUrl ??
+                      firstScreenController.listResponse.list[index].avatarUrl ??
                           "",
                     );
                   }),
@@ -233,14 +233,14 @@ class GetxScreenState extends State<GetxScreen> {
   }
 
   String getDescription(int index) {
-    if (getxScreenController.listResponse.list[index].description == null) {
+    if (firstScreenController.listResponse.list[index].description == null) {
       return "Description Not Availble";
-    } else if (getxScreenController
+    } else if (firstScreenController
             .listResponse.list[index].description.length ==
         AppDimens.NUM_0) {
       return "Description Not Availble";
     } else {
-      return getxScreenController.listResponse.list[index].description;
+      return firstScreenController.listResponse.list[index].description;
     }
   }
 }

@@ -1,11 +1,9 @@
 import 'package:getx/network/base/base_api_call.dart';
 import 'package:getx/network/network_endpoints.dart';
-import 'package:getx/view/getx_screen_controller.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:getx/view/getx_screen_controller.dart';
+import 'package:getx/view/first_screen_controller.dart';
 
-class GetxScreenNao {
-  GetxScreenController getxScreenController;
+class FirstScreenNao {
+  FirstScreenController firstScreenController;
 
   Future<List<dynamic>> diagnocareRes() async {
     var response = await BaseApi()
