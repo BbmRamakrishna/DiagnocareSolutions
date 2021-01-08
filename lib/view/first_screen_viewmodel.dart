@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:getx/network/nao/first_screen_nao.dart';
-import 'package:getx/view/first_screen_controller.dart';
+import 'package:flutter_state_management_getx/network/nao/first_screen_nao.dart';
+import 'package:flutter_state_management_getx/view/first_screen_controller.dart';
 
 class FirstScreenViewModel {
   FirstScreenController firstScreenController;

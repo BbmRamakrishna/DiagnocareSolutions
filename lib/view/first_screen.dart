@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx/resource/constants/app_constants.dart';
-import 'package:getx/resource/values/app_colors.dart';
-import 'package:getx/resource/values/app_dimens.dart';
-import 'package:getx/resource/values/app_strings.dart';
-import 'package:getx/utils/utility_widgets.dart';
-import 'package:getx/view/first_screen_controller.dart';
-import 'package:getx/view/first_screen_viewmodel.dart';
-import 'package:getx/widget/cp_appbar.dart';
-import 'package:getx/widget/cp_button.dart';
-import 'package:getx/widget/cp_text_view.dart';
+import 'package:flutter_state_management_getx/resource/constants/app_constants.dart';
+import 'package:flutter_state_management_getx/resource/values/app_colors.dart';
+import 'package:flutter_state_management_getx/resource/values/app_dimens.dart';
+import 'package:flutter_state_management_getx/resource/values/app_strings.dart';
+import 'package:flutter_state_management_getx/utils/utility_widgets.dart';
+import 'package:flutter_state_management_getx/view/first_screen_controller.dart';
+import 'package:flutter_state_management_getx/view/first_screen_viewmodel.dart';
+import 'package:flutter_state_management_getx/widget/cp_appbar.dart';
+import 'package:flutter_state_management_getx/widget/cp_button.dart';
+import 'package:flutter_state_management_getx/widget/cp_text_view.dart';
 
 class FirstScreen extends StatefulWidget {
   @override

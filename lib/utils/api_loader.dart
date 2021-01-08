@@ -1,4 +1,4 @@
-import 'package:getx/resource/values/app_colors.dart';
+import 'package:flutter_state_management_getx/resource/values/app_colors.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';

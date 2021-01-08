@@ -1,6 +1,6 @@
-import 'package:getx/network/base/base_api_call.dart';
-import 'package:getx/network/network_endpoints.dart';
-import 'package:getx/view/first_screen_controller.dart';
+import 'package:flutter_state_management_getx/network/base/base_api_call.dart';
+import 'package:flutter_state_management_getx/network/network_endpoints.dart';
+import 'package:flutter_state_management_getx/view/first_screen_controller.dart';
 
 class FirstScreenNao {
   FirstScreenController firstScreenController;

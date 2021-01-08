@@ -1,4 +1,4 @@
-import 'package:getx/resource/config/size_config.dart';
+import 'package:flutter_state_management_getx/resource/config/size_config.dart';
 import 'package:flutter/material.dart';
 
 class ResponsiveWidget extends StatelessWidget {

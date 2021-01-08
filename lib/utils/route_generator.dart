@@ -1,5 +1,5 @@
-import 'package:getx/view/first_screen.dart';
-import 'package:getx/widget/cp_appbar.dart';
+import 'package:flutter_state_management_getx/view/first_screen.dart';
+import 'package:flutter_state_management_getx/widget/cp_appbar.dart';
 import 'package:flutter/material.dart';
 
 class RouteGenerator {

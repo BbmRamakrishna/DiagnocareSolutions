@@ -1,6 +1,6 @@
-import 'package:getx/resource/values/app_styles.dart';
-import 'package:getx/resource/config/size_config.dart';
-import 'package:getx/utils/route_generator.dart';
+import 'package:flutter_state_management_getx/resource/values/app_styles.dart';
+import 'package:flutter_state_management_getx/resource/config/size_config.dart';
+import 'package:flutter_state_management_getx/utils/route_generator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

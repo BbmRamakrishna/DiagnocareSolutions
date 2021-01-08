@@ -9,7 +9,7 @@ Following is the state representation for the app:
   5. Logout State
  */
 
-import 'package:getx/utils/local_storage.dart';
+import 'package:flutter_state_management_getx/utils/local_storage.dart';
 
 class StateManagement {
   Future<int> currentState() async {

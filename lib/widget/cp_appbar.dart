@@ -1,7 +1,7 @@
-import 'package:getx/resource/config/size_config.dart';
-import 'package:getx/resource/constants/app_constants.dart';
-import 'package:getx/resource/values/app_colors.dart';
-import 'package:getx/resource/values/app_dimens.dart';
+import 'package:flutter_state_management_getx/resource/config/size_config.dart';
+import 'package:flutter_state_management_getx/resource/constants/app_constants.dart';
+import 'package:flutter_state_management_getx/resource/values/app_colors.dart';
+import 'package:flutter_state_management_getx/resource/values/app_dimens.dart';
 import 'package:flutter/material.dart';
 
 import 'cp_text_view.dart';

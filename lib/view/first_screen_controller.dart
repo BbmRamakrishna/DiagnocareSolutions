@@ -1,5 +1,5 @@
 
-import 'package:getx/network/response/dummy_response.dart';
+import 'package:flutter_state_management_getx/network/response/dummy_response.dart';
 import 'package:get/get.dart';
 
 class FirstScreenController extends GetxController {
