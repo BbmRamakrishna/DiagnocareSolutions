@@ -13,10 +13,10 @@ void main() async {
     ),
   );
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(GetxApp());
+  runApp(FlutterStateManagementGetxApp());
 }
 
-class GetxApp extends StatelessWidget {
+class FlutterStateManagementGetxApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
